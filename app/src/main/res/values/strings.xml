@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sports News and Information App</string>
+    <string name="add_element">Add Element</string>
+    <string name="news_label">News</string>
+    <string name="events_label">Events</string>
+    <string name="historical_archives_label">Historical Archives</string>
+    <string name="sports_label">Sports</string>
+    <string name="athletes_label">Athletes</string>
+    <string name="about_me_label">About Me</string>
+</resources>
