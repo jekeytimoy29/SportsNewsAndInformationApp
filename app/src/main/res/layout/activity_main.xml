@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="6dp"
+        android:contentDescription="@string/main_tab"
         android:layout_marginTop="22dp"
         app:layout_anchor="@id/mainFragmentHolder"
         app:layout_anchorGravity="top"
@@ -20,7 +21,9 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/mainFragmentHolder"
         android:layout_width="match_parent"
-        android:layout_height="870dp"/>
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/mainFragmentHolder"
+        app:layout_anchorGravity="center" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

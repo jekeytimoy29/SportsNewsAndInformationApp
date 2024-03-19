@@ -7,4 +7,5 @@
     <string name="sports_label">Sports</string>
     <string name="athletes_label">Athletes</string>
     <string name="about_me_label">About Me</string>
+    <string name="main_tab">Main Tab</string>
 </resources>

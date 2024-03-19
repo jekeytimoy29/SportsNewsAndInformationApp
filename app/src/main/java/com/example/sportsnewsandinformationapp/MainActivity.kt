@@ -2,9 +2,11 @@ package com.example.sportsnewsandinformationapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.sportsnewsandinformationapp.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         val viewPager = binding.mainFragmentHolder
         viewPager.adapter = MainFragmentAdapter(fragments, this)
+        binding.mainTabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
         TabLayoutMediator(binding.mainTabLayout, viewPager) { tab, position ->
             when (position) {
