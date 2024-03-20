@@ -8,4 +8,11 @@
     <string name="athletes_label">Athletes</string>
     <string name="about_me_label">About Me</string>
     <string name="main_tab">Main Tab</string>
+    <string-array name="sport_type_values">
+        <item>Measure</item>
+        <item>Precision</item>
+        <item>Spectacle</item>
+        <item>Combat</item>
+        <item>Play</item>
+    </string-array>
 </resources>

@@ -26,7 +26,7 @@ class SportsListAdapter(private val sportsList: List<Sport>) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(sport: Sport) {
-            binding.sportType.text = sport.type
+            binding.sportType.text = sport.type.getString()
             binding.sportName.text = sport.name
             binding.sportInstruction.text = sport.instruction
         }
