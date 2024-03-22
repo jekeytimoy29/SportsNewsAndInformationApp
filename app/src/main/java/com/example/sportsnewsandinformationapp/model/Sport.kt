@@ -28,7 +28,7 @@ enum class SportType {
     }
 }
 
-data class Sport(val context:Context, var type: SportType, var name: String, var instruction: String) : Serializable {
+data class Sport(val context:Context, val type: SportType, var name: String, var instruction: String) : Serializable {
     init {
         type.setContext(context)
     }

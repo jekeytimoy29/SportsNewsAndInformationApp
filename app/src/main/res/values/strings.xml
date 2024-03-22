@@ -8,6 +8,13 @@
     <string name="athletes_label">Athletes</string>
     <string name="about_me_label">About Me</string>
     <string name="main_tab">Main Tab</string>
+    <string name="name_label">Name</string>
+    <string name="sport_label">Sport</string>
+    <string name="country_label">Country</string>
+    <string name="personal_best_label">Personal Best</string>
+    <string name="medals_awarded_label">Medals Awarded</string>
+    <string name="facts_label">Facts</string>
+    <string name="field_input">: %1$s</string>
     <string-array name="sport_type_values">
         <item>Measure</item>
         <item>Precision</item>

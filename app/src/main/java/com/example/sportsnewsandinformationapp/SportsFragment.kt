@@ -14,12 +14,13 @@ import com.example.sportsnewsandinformationapp.model.SportType
 class SportsFragment : Fragment() {
     private var _binding: FragmentSportsBinding? = null
     private val binding get() = _binding!!
+    private lateinit var sportsList : MutableList<Sport>
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSportsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -27,7 +28,19 @@ class SportsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sportsList = mutableListOf(
+        sportsList = mutableListOf(
+            Sport(
+                requireContext(),
+                SportType.PLAY,
+                "Basketball",
+                "In basketball, players should focus on honing essential skills such as dribbling, shooting, passing, and rebounding, while also developing a deep understanding of offensive and defensive strategies to excel on the court. Teamwork and communication are crucial in basketball, with players working together to execute plays and outmaneuver opponents."
+            ),
+            Sport(
+                requireContext(),
+                SportType.PLAY,
+                "Soccer",
+                "Soccer players must master fundamental skills like passing, shooting, dribbling, and ball control, while also understanding the nuances of positioning, tactics, and game strategy. Fitness and endurance are essential for soccer players, who must cover large distances on the field and maintain high levels of energy and intensity throughout a match. Both basketball and soccer require teamwork and collaboration, with players relying on each other to achieve success on the field or court."
+            ),
             Sport(
                 requireContext(),
                 SportType.MEASURE,
@@ -57,18 +70,6 @@ class SportsFragment : Fragment() {
                 SportType.COMBAT,
                 "Boxing",
                 "In boxing, newcomers must learn the basic stances and punches, emphasizing proper technique and defensive strategies to protect themselves while effectively engaging with opponents. Endurance and conditioning are also key components of boxing training, with athletes focusing on building stamina and strength to sustain their performance throughout a match."
-            ),
-            Sport(
-                requireContext(),
-                SportType.PLAY,
-                "Soccer",
-                "Soccer players must master fundamental skills like passing, shooting, dribbling, and ball control, while also understanding the nuances of positioning, tactics, and game strategy. Fitness and endurance are essential for soccer players, who must cover large distances on the field and maintain high levels of energy and intensity throughout a match. Both basketball and soccer require teamwork and collaboration, with players relying on each other to achieve success on the field or court."
-            ),
-            Sport(
-                requireContext(),
-                SportType.PLAY,
-                "Basketball",
-                "In basketball, players should focus on honing essential skills such as dribbling, shooting, passing, and rebounding, while also developing a deep understanding of offensive and defensive strategies to excel on the court. Teamwork and communication are crucial in basketball, with players working together to execute plays and outmaneuver opponents."
             )
         )
 

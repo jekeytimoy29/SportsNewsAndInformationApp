@@ -17,12 +17,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
-        style="@style/SubTitleTextStyle"/>
+        style="@style/BoldSubTitleTextStyle"/>
 
     <TextView
         android:id="@+id/sportInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
-        style="@style/PrimaryTextStyle" />
+        style="@style/NormalTextStyle" />
 </LinearLayout>
