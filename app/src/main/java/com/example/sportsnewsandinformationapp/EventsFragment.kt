@@ -5,14 +5,54 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sportsnewsandinformationapp.adapter.EventsListAdapter
+import com.example.sportsnewsandinformationapp.databinding.FragmentEventsBinding
+import com.example.sportsnewsandinformationapp.model.Event
+import java.util.Calendar
 
 class EventsFragment : Fragment() {
+    private var _binding: FragmentEventsBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var eventsList: MutableList<Event>
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_events, container, false)
+    ): View {
+        _binding = FragmentEventsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val calendar1 = Calendar.getInstance()
+        calendar1.set(2024, Calendar.MARCH, 10)
+
+        val calendar2 = Calendar.getInstance()
+        calendar2.set(2024, Calendar.MARCH, 15)
+
+        eventsList = mutableListOf(
+            Event(
+                "FIBA Basketball World Cup Qualifiers",
+                "Qualifying games for the 2025 FIBA Basketball World Cup",
+                calendar1.time
+            ),
+            Event(
+                "Indian Premier League (IPL)",
+                "Twenty20 Cricket League in India",
+                calendar2.time
+            )
+        )
+
+        binding.eventsListView.layoutManager = LinearLayoutManager(requireContext())
+        binding.eventsListView.adapter = EventsListAdapter(requireContext(), eventsList)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

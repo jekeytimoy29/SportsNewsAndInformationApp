@@ -15,6 +15,7 @@
     <string name="medals_awarded_label">Medals Awarded</string>
     <string name="facts_label">Facts</string>
     <string name="field_input">: %1$s</string>
+    <string name="events_date_format">dd/MM/yyyy</string>
     <string-array name="sport_type_values">
         <item>Measure</item>
         <item>Precision</item>
