@@ -9,8 +9,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historicalSportsArchiveListView"
         android:layout_width="match_parent"
-        android:layout_height="714dp"
-        android:layout_marginTop="70dp"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="70dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -10,8 +10,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/eventsListView"
         android:layout_width="match_parent"
-        android:layout_height="708dp"
-        android:layout_marginTop="76dp"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="76dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
