@@ -6,24 +6,30 @@ Developed an Android App focused on Sports News and Information.  The app will a
 <div>
   <img src="https://github.com/jekeytimoy29/SportsNewsAndInformationApp/blob/master/screenshots/sports.png" height="600" width="300" />
 </div>
+
 ## News Screen
 <div>
   <img src="https://github.com/jekeytimoy29/SportsNewsAndInformationApp/blob/master/screenshots/news.png" height="600" width="300" />
 </div>
+
 ## Athletes Screen
 <div>
   <img src="https://github.com/jekeytimoy29/SportsNewsAndInformationApp/blob/master/screenshots/athletes.png" height="600" width="300" />
 </div>
+
 ## Events Screen
 <div>
   <img src="https://github.com/jekeytimoy29/SportsNewsAndInformationApp/blob/master/screenshots/events.png" height="600" width="300" />
 </div>
+
 ## Historical Archives Screen
 <div>
   <img src="https://github.com/jekeytimoy29/SportsNewsAndInformationApp/blob/master/screenshots/history_archives.png" height="600" width="300" />
 </div>
+
 ## About Me Screen
 <div>
   <img src="https://github.com/jekeytimoy29/SportsNewsAndInformationApp/blob/master/screenshots/about_me.png" height="600" width="300" />
 </div>
+
 
