@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.sportsnewsandinformationapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +30,9 @@ class MainActivity : AppCompatActivity() {
         val viewPager = binding.mainFragmentHolder
         viewPager.adapter = MainFragmentAdapter(fragments, this)
         binding.mainTabLayout.tabGravity = TabLayout.GRAVITY_FILL
+        val tabLayout = binding.mainTabLayout
 
-        TabLayoutMediator(binding.mainTabLayout, viewPager) { tab, position ->
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
                 0 -> tab.text = getString(R.string.sports_label)
                 1 -> tab.text = getString(R.string.news_label)
@@ -43,13 +45,27 @@ class MainActivity : AppCompatActivity() {
         }.attach()
 
         binding.mainBottomNav.setOnItemSelectedListener { item ->
-            when(item.itemId){
+            when (item.itemId) {
                 R.id.menu_news -> viewPager.setCurrentItem(1, false)
                 R.id.menu_events -> viewPager.setCurrentItem(3, false)
                 R.id.menu_historical_archives -> viewPager.setCurrentItem(4, false)
             }
             true
         }
+
+        tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                if (tab?.position == 5) binding.floatingActionButton.hide()
+                else binding.floatingActionButton.show()
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+        })
     }
 
     private inner class MainFragmentAdapter(
