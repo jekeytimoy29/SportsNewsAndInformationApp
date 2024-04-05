@@ -5,6 +5,7 @@ Developed an Android App focused on Sports News and Information.  The app will a
 ## Sports Screen
 <div>
   <img src="https://github.com/jekeytimoy29/SportsNewsAndInformationApp/blob/master/screenshots/sports.png" height="600" width="300" />
+  <img src="https://github.com/jekeytimoy29/SportsNewsAndInformationApp/blob/master/screenshots/add_sport.png" height="600" width="300" />
 </div>
 
 ## News Screen
