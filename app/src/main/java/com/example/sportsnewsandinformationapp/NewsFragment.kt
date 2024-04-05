@@ -11,7 +11,7 @@ import com.example.sportsnewsandinformationapp.adapter.NewsListAdapter
 import com.example.sportsnewsandinformationapp.databinding.FragmentNewsBinding
 import com.example.sportsnewsandinformationapp.model.News
 
-class NewsFragment : Fragment() {
+class NewsFragment : Fragment(), FragmentWithFAB {
     private var _binding:FragmentNewsBinding? = null
     private val binding get() = _binding!!
     private lateinit var newsList: MutableList<News>
@@ -45,5 +45,8 @@ class NewsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun showDialog() {
     }
 }

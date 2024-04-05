@@ -4,17 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.sportsnewsandinformationapp.adapter.SportsListAdapter
 import com.example.sportsnewsandinformationapp.databinding.FragmentSportsBinding
 import com.example.sportsnewsandinformationapp.model.Sport
 import com.example.sportsnewsandinformationapp.model.SportType
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textfield.TextInputLayout
 
-class SportsFragment : Fragment() {
+class SportsFragment : Fragment(), FragmentWithFAB {
     private var _binding: FragmentSportsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var sportsList : MutableList<Sport>
+    private lateinit var sportsList: MutableList<Sport>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -75,6 +79,28 @@ class SportsFragment : Fragment() {
 
         binding.sportsListView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.sportsListView.adapter = SportsListAdapter(sportsList)
+    }
+
+    override fun showDialog() {
+        val dialogView =
+            LayoutInflater.from(requireContext()).inflate(R.layout.dialog_add_sport, null)
+        val spinnerMeasure = dialogView.findViewById<TextInputLayout>(R.id.selectMeasure)
+        val measureArray = requireContext().resources.getStringArray(R.array.sport_type_values)
+        val adapter = ArrayAdapter(
+            requireContext(),
+            R.layout.item_measure,
+            measureArray
+        )
+        (spinnerMeasure.editText as? AutoCompleteTextView)?.setAdapter(adapter)
+
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.add_new_sport))
+            .setView(dialogView)
+            .setPositiveButton(getString(R.string.add_label)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setNegativeButton(getString(R.string.cancel_label)) { dialog, _ -> dialog.dismiss() }
+            .show()
     }
 
     override fun onDestroyView() {

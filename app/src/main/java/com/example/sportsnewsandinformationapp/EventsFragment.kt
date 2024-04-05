@@ -11,7 +11,7 @@ import com.example.sportsnewsandinformationapp.databinding.FragmentEventsBinding
 import com.example.sportsnewsandinformationapp.model.Event
 import java.util.Calendar
 
-class EventsFragment : Fragment() {
+class EventsFragment : Fragment(), FragmentWithFAB {
     private var _binding: FragmentEventsBinding? = null
     private val binding get() = _binding!!
     private lateinit var eventsList: MutableList<Event>
@@ -54,5 +54,8 @@ class EventsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun showDialog() {
     }
 }

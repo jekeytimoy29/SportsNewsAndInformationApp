@@ -2,7 +2,6 @@ package com.example.sportsnewsandinformationapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.sportsnewsandinformationapp.databinding.ActivityMainBinding
@@ -55,8 +54,10 @@ class MainActivity : AppCompatActivity() {
 
         tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                if (tab?.position == 5) binding.floatingActionButton.hide()
-                else binding.floatingActionButton.show()
+                val adapter = viewPager.adapter as? MainFragmentAdapter
+                val currentFragment = adapter!!.fragments[viewPager.currentItem]
+                if (currentFragment is FragmentWithFAB) binding.floatingActionButton.show()
+                else binding.floatingActionButton.hide()
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -66,6 +67,12 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        binding.floatingActionButton.setOnClickListener {
+            val adapter = viewPager.adapter as? MainFragmentAdapter
+            val currentFragment = adapter!!.fragments[viewPager.currentItem]
+            if (currentFragment is FragmentWithFAB) currentFragment.showDialog()
+        }
     }
 
     private inner class MainFragmentAdapter(

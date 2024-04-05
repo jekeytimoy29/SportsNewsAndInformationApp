@@ -10,7 +10,7 @@ import com.example.sportsnewsandinformationapp.adapter.HistoryArchiveListAdapter
 import com.example.sportsnewsandinformationapp.databinding.FragmentHistoricalSportsArchiveBinding
 import com.example.sportsnewsandinformationapp.model.HistoricalSportsArchive
 
-class HistoricalSportsArchiveFragment : Fragment() {
+class HistoricalSportsArchiveFragment : Fragment(), FragmentWithFAB {
     private var _binding: FragmentHistoricalSportsArchiveBinding? = null
     private val binding get() = _binding!!
     private lateinit var historyArchiveList: MutableList<HistoricalSportsArchive>
@@ -49,5 +49,8 @@ class HistoricalSportsArchiveFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun showDialog() {
     }
 }

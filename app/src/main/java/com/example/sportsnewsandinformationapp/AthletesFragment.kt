@@ -11,7 +11,7 @@ import com.example.sportsnewsandinformationapp.adapter.AthletesListAdapter
 import com.example.sportsnewsandinformationapp.databinding.FragmentAthletesBinding
 import com.example.sportsnewsandinformationapp.model.Athlete
 
-class AthletesFragment : Fragment() {
+class AthletesFragment : Fragment(), FragmentWithFAB {
     private var _binding: FragmentAthletesBinding? = null
     private val binding get() = _binding!!
     private lateinit var athletesList: MutableList<Athlete>
@@ -102,5 +102,8 @@ class AthletesFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun showDialog() {
     }
 }
