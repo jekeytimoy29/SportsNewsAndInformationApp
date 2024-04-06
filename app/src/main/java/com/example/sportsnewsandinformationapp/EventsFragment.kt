@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportsnewsandinformationapp.adapter.EventsListAdapter
 import com.example.sportsnewsandinformationapp.databinding.FragmentEventsBinding
 import com.example.sportsnewsandinformationapp.model.Event
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Calendar
 
 class EventsFragment : Fragment(), FragmentWithFAB {
@@ -57,5 +58,16 @@ class EventsFragment : Fragment(), FragmentWithFAB {
     }
 
     override fun showDialog() {
+        val dialogView =
+            LayoutInflater.from(requireContext()).inflate(R.layout.dialog_add_event, null)
+
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.add_new_event))
+            .setView(dialogView)
+            .setPositiveButton(getString(R.string.add_label)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setNegativeButton(getString(R.string.cancel_label)) { dialog, _ -> dialog.dismiss() }
+            .show()
     }
 }

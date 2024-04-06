@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportsnewsandinformationapp.adapter.HistoryArchiveListAdapter
 import com.example.sportsnewsandinformationapp.databinding.FragmentHistoricalSportsArchiveBinding
 import com.example.sportsnewsandinformationapp.model.HistoricalSportsArchive
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class HistoricalSportsArchiveFragment : Fragment(), FragmentWithFAB {
     private var _binding: FragmentHistoricalSportsArchiveBinding? = null
@@ -52,5 +53,16 @@ class HistoricalSportsArchiveFragment : Fragment(), FragmentWithFAB {
     }
 
     override fun showDialog() {
+        val dialogView =
+            LayoutInflater.from(requireContext()).inflate(R.layout.dialog_add_historical_archive, null)
+
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.add_new_historical_archive))
+            .setView(dialogView)
+            .setPositiveButton(getString(R.string.add_label)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setNegativeButton(getString(R.string.cancel_label)) { dialog, _ -> dialog.dismiss() }
+            .show()
     }
 }

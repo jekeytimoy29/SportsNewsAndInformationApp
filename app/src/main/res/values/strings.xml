@@ -26,6 +26,22 @@
     <string name="add_label">Add</string>
     <string name="cancel_label">Cancel</string>
     <string name="sport_type_label">Sport Type</string>
+    <string name="news_image_url">News Image URL</string>
+    <string name="news_description">News Description</string>
+    <string name="news_title">News Title</string>
+    <string name="athlete_s_name">Athlete\'s Name</string>
+    <string name="main_competing_sport">Main Competing Sport</string>
+    <string name="personal_best">Personal Best</string>
+    <string name="number_of_medals_awarded">Number of Medals Awarded</string>
+    <string name="interesting_facts">Interesting Facts</string>
+    <string name="add_new_news">Add New News</string>
+    <string name="event_name">Event Name</string>
+    <string name="select_date">Select Date</string>
+    <string name="add_new_event">Add New Event</string>
+    <string name="date_label">Date</string>
+    <string name="description_label">Description</string>
+    <string name="event_description">Event Description</string>
+    <string name="add_new_historical_archive">Add New Historical Archive</string>
     <string-array name="sport_type_values">
         <item>Measure</item>
         <item>Precision</item>

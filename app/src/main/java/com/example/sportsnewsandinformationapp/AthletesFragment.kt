@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.sportsnewsandinformationapp.adapter.AthletesListAdapter
 import com.example.sportsnewsandinformationapp.databinding.FragmentAthletesBinding
 import com.example.sportsnewsandinformationapp.model.Athlete
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AthletesFragment : Fragment(), FragmentWithFAB {
     private var _binding: FragmentAthletesBinding? = null
@@ -105,5 +106,16 @@ class AthletesFragment : Fragment(), FragmentWithFAB {
     }
 
     override fun showDialog() {
+        val dialogView =
+            LayoutInflater.from(requireContext()).inflate(R.layout.dialog_add_athlete, null)
+
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Add New Athlete")
+            .setView(dialogView)
+            .setPositiveButton(getString(R.string.add_label)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setNegativeButton(getString(R.string.cancel_label)) { dialog, _ -> dialog.dismiss() }
+            .show()
     }
 }
